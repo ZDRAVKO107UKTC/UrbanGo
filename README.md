@@ -12,3 +12,17 @@ Responses:
 Examples:
 - `/vehicles`
 - `/vehicles?type=car`
+## Bookings
+
+### POST /bookings
+Creates a new booking and atomically marks the vehicle as unavailable.
+
+Request body:
+- `rider_id` (int)
+- `vehicle_id` (int)
+
+Responses:
+- `201 Created` – booking created
+- `404 Not Found` – vehicle does not exist
+- `409 Conflict` – vehicle already unavailable / already booked
+- `422 Unprocessable Entity` – invalid payload
