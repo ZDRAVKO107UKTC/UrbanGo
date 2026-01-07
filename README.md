@@ -26,3 +26,13 @@ Responses:
 - `404 Not Found` – vehicle does not exist
 - `409 Conflict` – vehicle already unavailable / already booked
 - `422 Unprocessable Entity` – invalid payload
+## Drivers
+
+### PATCH /drivers/{driver_id}/availability
+Request body:
+- `driver_available` (bool)
+
+Responses:
+- `200 OK` – updated availability
+- `404 Not Found` – driver not found
+- `400 Bad Request` – user exists but is not a DRIVER
