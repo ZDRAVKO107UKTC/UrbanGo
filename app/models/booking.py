@@ -1,8 +1,12 @@
 from __future__ import annotations
+from sqlalchemy import DateTime
+from sqlalchemy.sql import func
 
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import BigInteger, String, ForeignKey
 from app.models.vehicle import Base
+
+accepted_at: Mapped[object | None] = mapped_column(DateTime(timezone=True), nullable=True)
 
 class Booking(Base):
     __tablename__ = "bookings"

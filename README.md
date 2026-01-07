@@ -36,3 +36,11 @@ Responses:
 - `200 OK` – updated availability
 - `404 Not Found` – driver not found
 - `400 Bad Request` – user exists but is not a DRIVER
+### PATCH /bookings/{booking_id}/accept?driver_id={driver_id}
+Accepts a REQUESTED booking.
+
+Responses:
+- 200 OK – booking accepted
+- 404 Not Found – booking or driver not found
+- 400 Bad Request – driver invalid role or not available
+- 409 Conflict – booking not in REQUESTED state
