@@ -44,3 +44,14 @@ Responses:
 - 404 Not Found – booking or driver not found
 - 400 Bad Request – driver invalid role or not available
 - 409 Conflict – booking not in REQUESTED state
+### PATCH /bookings/{booking_id}/ready
+Marks an ACCEPTED booking as READY. Emits a BOOKING_READY event.
+
+Responses:
+- 200 OK – booking marked READY
+- 404 Not Found – booking not found
+- 409 Conflict – booking must be ACCEPTED before READY
+
+Observer Pattern:
+When a booking becomes READY, NotificationService and BillingService are triggered via an in-process EventBus.
+An outbox record is also written to `booking_events_outbox` for reliability and future async processing.

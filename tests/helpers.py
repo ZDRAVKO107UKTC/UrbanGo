@@ -1,4 +1,3 @@
-import os
 from sqlalchemy import create_engine, text
 
 def reset_for_vehicle(vehicle_id: int) -> None:
