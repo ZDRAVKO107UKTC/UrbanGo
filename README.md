@@ -55,3 +55,11 @@ Responses:
 Observer Pattern:
 When a booking becomes READY, NotificationService and BillingService are triggered via an in-process EventBus.
 An outbox record is also written to `booking_events_outbox` for reliability and future async processing.
+## Riders
+
+### GET /riders/{rider_id}/bookings
+Returns booking history for a rider ordered by newest first.
+
+Responses:
+- 200 OK – list of bookings (may be empty)
+- 404 Not Found – rider not found
