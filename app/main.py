@@ -15,6 +15,8 @@ from app.api.routes.drivers import router as drivers_router
 from app.api.routes.booking_accept import router as booking_accept_router
 from app.api.routes.booking_status import router as booking_status_router
 from app.api.routes.riders import router as riders_router
+from app.api.routes.booking_details import router as booking_details_router
+
 
 
 app = FastAPI(title="UrbanGo API")
@@ -32,5 +34,7 @@ app.include_router(drivers_router)
 app.include_router(booking_accept_router)
 app.include_router(booking_status_router)
 app.include_router(riders_router)
+app.include_router(booking_details_router)
+
 
 

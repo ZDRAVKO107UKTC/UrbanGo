@@ -63,3 +63,11 @@ Returns booking history for a rider ordered by newest first.
 Responses:
 - 200 OK – list of bookings (may be empty)
 - 404 Not Found – rider not found
+- ### GET /bookings/{booking_id}?rider_id={rider_id}
+Returns booking details for a rider.
+
+Responses:
+- 200 OK – booking details
+- 404 Not Found – booking not found
+- 403 Forbidden – booking does not belong to rider
+
