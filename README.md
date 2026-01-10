@@ -296,5 +296,5 @@ pytest -q
 
 ## Project Status
 
-✅ **All User Stories implemented and completed.**
+ **All User Stories implemented and completed.**
 System is production-safe by design and review-ready.
