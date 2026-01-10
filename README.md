@@ -80,3 +80,10 @@ Responses:
 - 400 Bad Request – user is not a DRIVER
 - 403 Forbidden – booking not assigned to driver
 - 409 Conflict – booking must be READY before COMPLETED
+### GET /bookings/pending?driver_id={driver_id}
+Returns all pending ride requests (bookings in REQUESTED state). Driver-only.
+
+Responses:
+- 200 OK – list of pending bookings
+- 404 Not Found – driver not found
+- 400 Bad Request – user exists but is not a DRIVER

@@ -21,6 +21,7 @@ from app.api.routes.booking_complete import router as booking_complete_router
 
 
 
+
 app = FastAPI(title="UrbanGo API")
 
 event_bus = EventBus()
