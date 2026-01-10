@@ -56,7 +56,7 @@ Responses:
 - 401 Unauthorized (missing/invalid token)
 - 403 Forbidden (not an admin)
 ### PATCH /admin/vehicles/{vehicle_id}/disable
-Disables a vehicle (soft delete).
+Disables a vehicle (soft delete)
 
 Authorization:
 - Bearer Token (ADMIN)
