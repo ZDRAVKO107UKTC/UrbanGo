@@ -46,6 +46,22 @@ Responses:
 - 400 Bad Request (invalid status)
 - 401 Unauthorized (missing/invalid token)
 - 403 Forbidden (not an admin)
+### PATCH /admin/vehicles/{vehicle_id}/disable
+Disables a vehicle (soft delete).
+
+Authorization:
+- Bearer Token (ADMIN)
+
+Behavior:
+- Sets available = false
+- Sets status = DISABLED
+
+Responses:
+- 200 OK
+- 401 Unauthorized
+- 403 Forbidden
+- 404 Not Found
+- 409 Conflict (already disabled)
 
 
 ## Vehicles
