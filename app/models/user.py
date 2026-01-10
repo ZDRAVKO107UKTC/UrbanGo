@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from sqlalchemy import Text
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import BigInteger, String, Boolean
 from app.models.vehicle import Base
@@ -13,3 +14,4 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(255))
     is_active: Mapped[bool] = mapped_column(Boolean)
     driver_available: Mapped[bool] = mapped_column(Boolean)
+    password_hash: Mapped[str | None] = mapped_column(Text, nullable=True)

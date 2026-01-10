@@ -1,4 +1,41 @@
 # UrbanGo
+
+## Authentication
+
+### POST /auth/login
+Authenticates a user and returns a JWT access token.
+
+Request body:
+- `email` (string, email format)
+- `password` (string)
+
+Responses:
+- `200 OK` – returns `access_token` and `token_type` (bearer)
+- `401 Unauthorized` – invalid credentials
+
+Security:
+- Passwords are hashed using SHA256 + bcrypt
+- JWT tokens expire after 60 minutes
+- Tokens include user ID (`sub`) and role claims
+
+## Admin
+
+### POST /admin/vehicles
+Creates a new vehicle in the system. Requires ADMIN role.
+
+Request body:
+- `vehicle_type` (string)
+- `plate_number` (string, optional)
+- `model` (string)
+
+Headers:
+- `Authorization: Bearer <token>` (ADMIN role required)
+
+Responses:
+- `201 Created` – vehicle created successfully
+- `401 Unauthorized` – missing or invalid token
+- `403 Forbidden` – user is not an ADMIN
+
 ## Vehicles
 
 ### GET /vehicles

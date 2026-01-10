@@ -17,6 +17,9 @@ from app.api.routes.booking_status import router as booking_status_router
 from app.api.routes.riders import router as riders_router
 from app.api.routes.booking_details import router as booking_details_router
 from app.api.routes.booking_complete import router as booking_complete_router
+from app.api.routes.admin_vehicles import router as admin_vehicles_router
+from app.api.routes.auth import router as auth_router
+
 
 
 
@@ -39,5 +42,6 @@ app.include_router(booking_status_router)
 app.include_router(riders_router)
 app.include_router(booking_details_router)
 app.include_router(booking_complete_router)
-
+app.include_router(admin_vehicles_router)
+app.include_router(auth_router)
 
