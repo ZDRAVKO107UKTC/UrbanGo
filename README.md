@@ -35,6 +35,18 @@ Responses:
 - `201 Created` – vehicle created successfully
 - `401 Unauthorized` – missing or invalid token
 - `403 Forbidden` – user is not an ADMIN
+### GET /admin/bookings
+Lists all bookings (admin-only). Supports optional status filter.
+
+Query:
+- status (optional): REQUESTED | ACCEPTED | READY | COMPLETED
+
+Responses:
+- 200 OK
+- 400 Bad Request (invalid status)
+- 401 Unauthorized (missing/invalid token)
+- 403 Forbidden (not an admin)
+
 
 ## Vehicles
 
