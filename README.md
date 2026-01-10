@@ -17,6 +17,15 @@ Security:
 - Passwords are hashed using SHA256 + bcrypt
 - JWT tokens expire after 60 minutes
 - Tokens include user ID (`sub`) and role claims
+### POST /auth/logout
+Logs out the authenticated user by revoking the current JWT token.
+
+Authorization:
+- Bearer Token
+
+Responses:
+- 204 No Content
+- 401 Unauthorized (invalid or revoked token)
 
 ## Admin
 

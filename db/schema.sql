@@ -56,6 +56,12 @@ CREATE TABLE IF NOT EXISTS booking_events_outbox (
     processed_at TIMESTAMPTZ,
     CONSTRAINT fk_outbox_booking FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE
 );
+CREATE TABLE IF NOT EXISTS token_blacklist (
+    id BIGSERIAL PRIMARY KEY,
+    token TEXT NOT NULL UNIQUE,
+    expires_at TIMESTAMPTZ NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
 
 CREATE INDEX IF NOT EXISTS idx_vehicles_type_available
     ON vehicles (vehicle_type, available);

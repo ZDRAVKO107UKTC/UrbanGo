@@ -8,6 +8,8 @@ from app.models import vehicle  # noqa: F401
 from app.models import booking  # noqa: F401
 from app.models import user     # noqa: F401
 from app.models import outbox   # noqa: F401
+from app.models import token_blacklist  # noqa: F401
+
 
 from app.api.routes.vehicles import router as vehicles_router
 from app.api.routes.bookings import router as bookings_router
@@ -21,6 +23,7 @@ from app.api.routes.admin_vehicles import router as admin_vehicles_router
 from app.api.routes.auth import router as auth_router
 from app.api.routes.admin_bookings import router as admin_bookings_router
 from app.api.routes.admin_vehicle_disable import router as admin_vehicle_disable_router
+from app.api.routes.auth_logout import router as auth_logout_router
 
 
 
@@ -50,3 +53,4 @@ app.include_router(admin_vehicles_router)
 app.include_router(auth_router)
 app.include_router(admin_bookings_router)
 app.include_router(admin_vehicle_disable_router)
+app.include_router(auth_logout_router)
