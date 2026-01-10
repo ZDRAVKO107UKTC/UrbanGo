@@ -71,3 +71,12 @@ Responses:
 - 404 Not Found – booking not found
 - 403 Forbidden – booking does not belong to rider
 
+### PATCH /bookings/{booking_id}/complete?driver_id={driver_id}
+Marks a READY booking as COMPLETED.
+
+Responses:
+- 200 OK – booking completed
+- 404 Not Found – booking or driver not found
+- 400 Bad Request – user is not a DRIVER
+- 403 Forbidden – booking not assigned to driver
+- 409 Conflict – booking must be READY before COMPLETED
